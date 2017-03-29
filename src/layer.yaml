@@ -1,1 +1,2 @@
 includes: ['layer:openstack-api', 'interface:bind-rndc', 'interface:hacluster', 'interface:openstack-ha']
+repo: git@github.com:falfaro/charm-designate.git

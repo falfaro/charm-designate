@@ -624,10 +624,16 @@ class DesignateCharm(openstack_charm.HAOpenStackCharm):
                     cls.create_domain(
                         nova_domain_name,
                         hookenv.config('nova-domain-email'))
+                else:
+                    hookenv.log('No nova-domain was specified.',
+                                level=hookenv.WARNING)
                 if neutron_domain_name:
                     cls.create_domain(
                         neutron_domain_name,
                         hookenv.config('neutron-domain-email'))
+                else:
+                    hookenv.log('No neutron-domain was specified.',
+                                level=hookenv.WARNING)
 
     def update_pools(self):
         # designate-manage communicates with designate via message bus so no
